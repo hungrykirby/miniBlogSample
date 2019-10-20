@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   }
 
   devise_scope :admin do
-    get 'admin/:id', to: "admins/registrations#detail"
-    get 'admin/:id/edit', to: 'admins/registrations#edit'
+    get 'admin/:id', to: "admins/registrations#detail", as: 'admin' 
     get 'signup', to: "admins/registrations#new"
     get 'login', to: "admins/sessions#new"
     get 'logout', to: "admins/sessions#destroy"
