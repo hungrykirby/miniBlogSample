@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_095522) do
+ActiveRecord::Schema.define(version: 2019_10_24_135117) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2019_10_20_095522) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "adminname"
     t.string "kana"
+    t.boolean "login_notify_flag", default: true, null: false
+    t.integer "auth_type", default: 1, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
@@ -29,6 +31,17 @@ ActiveRecord::Schema.define(version: 2019_10_20_095522) do
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "display_users", force: :cascade do |t|
+    t.string "name"
+    t.string "kana"
+    t.string "email"
+    t.text "description"
+    t.integer "age"
+    t.string "sex"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

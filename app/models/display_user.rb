@@ -1,0 +1,2 @@
+class DisplayUser < ApplicationRecord
+end
