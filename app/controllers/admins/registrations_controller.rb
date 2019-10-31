@@ -7,6 +7,10 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   def detail
     @admin = Admin.find_by(id: params[:id])
   end
+  
+  def adminpage
+    @admin = current_admin
+  end
 
   # GET /resource/sign_up
   # def new

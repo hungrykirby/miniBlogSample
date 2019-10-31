@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     get 'signup', to: 'admins/registrations#new'
     get 'login', to: 'admins/sessions#new'
     get 'logout', to: 'admins/sessions#destroy'
+    get 'adminpage', to: 'admins/registrations#adminpage'
   end
 end
