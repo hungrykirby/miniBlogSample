@@ -25,6 +25,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
   # def edit
   #   super
+  #   redirect_to controller: 'blogs#index', status: 404
   # end
 
   # PUT /resource
