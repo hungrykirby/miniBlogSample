@@ -56,10 +56,12 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
 # Login
 gem 'devise'
 # markdown
 gem 'redcarpet', '~> 2.3.0'
 # シンタックスハイライト
 gem 'coderay'
+# paging
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'

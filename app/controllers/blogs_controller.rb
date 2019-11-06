@@ -7,7 +7,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.paginate(page: params[:page])
     @admin = current_admin
   end
 
@@ -24,13 +24,11 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
-    need_admin_login
   end
 
   # POST /blogs
   # POST /blogs.json
   def create
-    # need_admin_login
     @blog = Blog.new(blog_params)
 
     respond_to do |format|

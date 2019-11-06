@@ -3,9 +3,10 @@
 class Admins::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  before_action :need_admin_login, only: [:detail, :adminpage]
   # プロフィール画面用のアクションを追加
   def detail
-    @admin = Admin.find_by(id: params[:id])
+    @admin = Admin.find_by(id: params[:id]) if current_admin.present?
   end
   
   def adminpage
@@ -47,7 +48,7 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -68,4 +69,18 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+
+  def need_admin_login(alert_message = nil)
+    unless admin_signed_in?
+      if alert_message.blank?
+        flash[:alert] = 'だめだよぉ、そんなことしちゃあ'
+      else
+        flash[:alert] = alert_message
+      end
+      redirect_to blogs_url
+    end
+  end
+
 end
