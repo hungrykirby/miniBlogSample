@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :display_users do
+    member do
+      get 'new'
+    end
+  end
   resources :blogs do
     member do
       # get 'show'

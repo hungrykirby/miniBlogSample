@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= will_paginate %>
+      <% @display_users.each do |display_user| %>
+        <tr>
+          <td><%= display_user.name %></td>
+        </tr>
+      <% end %>
+    <%= will_paginate %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_display_user_path %>

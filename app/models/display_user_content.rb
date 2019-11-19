@@ -1,0 +1,2 @@
+class DisplayUserContent < ApplicationRecord
+end

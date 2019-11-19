@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_31_140622) do
+ActiveRecord::Schema.define(version: 2019_11_19_111936) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2019_10_31_140622) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "display_user_contents", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
+    t.text "body"
+    t.integer "display_user_id"
+    t.index ["display_user_id"], name: "index_display_user_contents_on_display_user_id"
+  end
+
   create_table "display_users", force: :cascade do |t|
     t.string "name"
     t.string "kana"
@@ -60,4 +69,5 @@ ActiveRecord::Schema.define(version: 2019_10_31_140622) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "display_user_contents", "display_users"
 end
