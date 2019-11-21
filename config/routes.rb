@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+  root to: 'home#index'
   resources :display_users do
     member do
       get 'new'

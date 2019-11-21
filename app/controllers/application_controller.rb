@@ -2,6 +2,9 @@ class ApplicationController < ActionController::Base
   include EditorHelper
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def index
+  end
+
   def after_sign_in_path_for(_resource)
     '/adminpage'
   end
