@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+管理画面とブログ機能付きの個人サイト作成録
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+管理画面には `devise` を使用。ブログ機能ではマークダウンでの投稿ができるように実装。なるべく `wordpress` っぽく作りたい。 `wordpress` なら一日でできるじゃんって話なんだけど…。
