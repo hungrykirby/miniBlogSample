@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :display_users do
     member do
-      get 'new'
+      get 'display_users/:id/edit' => 'display_users#edit'
     end
   end
   resources :blogs do

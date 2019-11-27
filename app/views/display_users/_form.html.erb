@@ -11,20 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <% @int_fields.each do |display_user_field| %>
+    <div class="field <%= display_user_field %>">
+      <%= form.label display_user_field %>
+      <%= form.number_field display_user_field %>
+    </div>
+  <% end %>
 
-  <div class="field">
-    <%= form.label :kana %>
-    <%= form.text_field :kana %>
-  </div>
+  <% @text_fields.each do |display_user_field| %>
+    <div class="field <%= display_user_field %>">
+      <%= form.label display_user_field %>
+      <%= form.text_field display_user_field %>
+    </div>
+  <% end %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+  <% @text_area_fields.each do |display_user_field| %>
+    <div class="field <%= display_user_field %>">
+      <%= form.label display_user_field %>
+      <%= form.text_area display_user_field %>
+    </div>
+  <% end %>
+
+  <% @checkbox_fields.each do |display_user_field| %>
+    <div class="field <%= display_user_field %>">
+      <%= form.label display_user_field %>
+      <%= form.check_box display_user_field %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= form.submit %>
