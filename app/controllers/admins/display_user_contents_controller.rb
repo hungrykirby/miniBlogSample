@@ -1,4 +1,4 @@
-class DisplayUserContentsController < ApplicationController
+class Admins::DisplayUserContentsController < ApplicationController
   include EditorHelper
   before_action :set_content, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admin!, only: [:edit, :update, :destroy]

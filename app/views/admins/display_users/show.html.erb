@@ -1,0 +1,14 @@
+<p>
+  <strong>Name:</strong>
+  <%= @display_user.name %>
+  <strong>Contents</strong>
+  <% @display_user.display_user_contents.each do |display_user_content| %>
+    <div><%= display_user_content.title %></div>
+  <% end %>
+  <%=
+    link_to 'Content', new_admins_display_user_display_user_content_path(display_user_id: @display_user.id)
+  %>
+</p>
+
+<%= link_to 'Edit', edit_admins_display_user_path(@display_user) %> |
+<%= link_to 'Back', admins_display_users_path %>

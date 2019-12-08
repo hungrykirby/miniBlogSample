@@ -17,7 +17,7 @@
         <tr>
           <td><%= display_user.id %></td>
           <td><%= display_user.name %></td>
-          <td><%= link_to 'Edit', edit_display_user_path(display_user) if @admin.present? %></td>
+          <td><%= link_to 'Edit', edit_admins_display_user_path(display_user) if @admin.present? %></td>
         </tr>
       <% end %>
     <%= will_paginate %>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New User', new_display_user_path %>
+<%= link_to 'New User', new_admins_display_user_path %>
